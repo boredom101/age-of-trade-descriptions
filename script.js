@@ -1,9 +1,3 @@
-var content = {
-  "Bronze bar": "when third place has to be good enough",
-  "Wooden stick": "brown and sticky",
-  "Fishing hook": "Why do they bite this? It doesn't even look delicious!"
-};
-
 function load() {
   $.getJSON(document.getElementById("url").value, (data) => {
     setDescriptions(data);
@@ -11,7 +5,7 @@ function load() {
 }
 
 if (window.location.pathname.startsWith("/game/inventory")) {
-  contents = '<label for="url">URL: </label><input type="text" id="url" name="url"><br><input type="button" value="Load" onclick="loadDesc()">';
+  contents = '<label for="url">URL: </label><input type="text" id="url" name="url"><br><input type="button" value="Load" class="button" onclick="loadDesc()">';
   addCard(4, "Description Loader", contents);
 }
 
