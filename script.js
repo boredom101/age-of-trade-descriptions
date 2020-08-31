@@ -5,7 +5,7 @@ function load() {
 }
 
 if (window.location.pathname.startsWith("/game/inventory")) {
-  contents = '<label for="url">URL: </label><input type="text" id="url" name="url"><br><br><input type="button" value="Load" class="button" onclick="loadDesc()">';
+  contents = '<label for="url">URL: </label><input type="text" id="url" name="url"><br><br><input type="button" value="Load" class="btn btn-primary btn-info" onclick="loadDesc()">';
   addCard(4, "Description Loader", contents);
 }
 
