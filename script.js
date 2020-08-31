@@ -1,11 +1,22 @@
-var contents = {
+var content = {
   "Bronze bar": "when third place has to be good enough",
   "Wooden stick": "brown and sticky",
   "Fishing hook": "Why do they bite this? It doesn't even look delicious!"
 };
 
+function load() {
+  $.getJSON(document.getElementById("url").value, (data) => {
+    setDescriptions(data);
+  });
+}
+
 if (window.location.pathname.startsWith("/game/inventory")) {
-  setDescription(contents);
+  contents = '<label for="url">URL: </label><input type="text" id="url" name="url"><br><input type="button" value="Load" onclick="loadDesc()">';
+  addCard(4, "Description Loader", contents);
+}
+
+function addCard(loc, title, contents) {
+  $(".col-md-" + loc).append(`<div class="card"><div class="card-header">${title}</div><div class="card-body">${contents}</div></div>`);
 }
 
 function setDescriptions(descriptions) {
