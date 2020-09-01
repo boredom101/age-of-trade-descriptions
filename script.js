@@ -1,4 +1,4 @@
-function load() {
+function loadDesc() {
   $.getJSON(document.getElementById("url").value, (data) => {
     setDescriptions(data);
   });
